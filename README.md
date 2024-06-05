@@ -12,4 +12,3 @@ pip install requirements.txt
 [streamlit ui](./ui.py)
 [api layer exposing agent via chatfsp](./api.py)
 [Dataset](https://datasets.imdbws.com/) (title.ratings.tsv.gz)
-[demo video](./assets/ratings_demo.mov)
