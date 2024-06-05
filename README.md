@@ -7,8 +7,9 @@ source .venv/bin/activate
 pip install requirements.txt 
 ```
 ### dir
+
 [agent implementation](./text2sql.py)
 [python notebook](./text2sql.ipynb)
 [streamlit ui](./ui.py)
 [api layer exposing agent via chatfsp](./api.py)
-[Dataset](https://datasets.imdbws.com/) (title.ratings.tsv.gz)
+[dataset](https://datasets.imdbws.com/) (title.ratings.tsv.gz)
