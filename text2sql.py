@@ -1,3 +1,4 @@
+from typing import AsyncGenerator, List, Optional, Union
 from langchain import SQLDatabase
 from langchain.chains import create_sql_query_chain
 from langchain.chains.llm import LLMChain
@@ -6,6 +7,7 @@ from langchain_community.tools.sql_database.tool import QuerySQLDataBaseTool
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
+from langchain_core.messages import HumanMessage, AIMessage
 
 from sqlalchemy import create_engine
 from dotenv import load_dotenv
@@ -66,3 +68,14 @@ class Text2Sql:
         )
 
         return chain
+    
+    async def invoke(
+        self,
+        text: str,
+        chat_history: List[Union[HumanMessage, AIMessage]],
+        message_id: Optional[str] = None,
+    ) -> AsyncGenerator[str, None]:
+        async for chunk in self.rephrase_chain().astream(
+            {"question": text}
+        ):
+            yield chunk

@@ -1,0 +1,14 @@
+POST http://localhost:8080/stream
+Content-Type: application/json
+
+{
+     "model": "",
+            "temperature": 0.7,
+            "top_p": 0,
+            "presence_penalty": 0,
+            "frequency_penalty": 0,
+            "stop": [],
+            "user": "",
+            "stream": true,
+            "messages": [{"content" : "How many titles have a rating above the median rating value?"}]
+}
