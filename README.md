@@ -1,5 +1,15 @@
 # FLAGSHIP AI ENG TEXT2SQL HACKATHON
 
-## Demo app for TEXT2SQL hackathon on june 5th
-
-Dataset used for this repo can be found [here](https://datasets.imdbws.com/) (title.ratings.tsv.gz)
+### setup
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install requirements.txt 
+```
+### dir
+[agent implementation](./text2sql.py)
+[python notebook](./text2sql.ipynb)
+[streamlit ui](./ui.py)
+[api layer exposing agent via chatfsp](./api.py)
+[Dataset](https://datasets.imdbws.com/) (title.ratings.tsv.gz)
+[demo video](./assets/ratings_demo.mov)
